@@ -97,10 +97,10 @@ class MainActivity : AppCompatActivity() {
             if (nowInput == true) {
 //                formula.text = (arithmetic_Operations(formula.text.toString().toInt())).toString()
                 when(preOder) {
-                    "+"-> formula.text = (formula.text.toString().toInt() + numTemp).toString()
-                    "-"-> formula.text = (formula.text.toString().toInt() - numTemp).toString()
-                    "*"-> formula.text = (formula.text.toString().toInt() * numTemp).toString()
-                    "/"-> formula.text = (formula.text.toString().toInt() / numTemp).toString()
+                    "+"-> formula.text = (numTemp + formula.text.toString().toInt()).toString()
+                    "-"-> formula.text = (numTemp - formula.text.toString().toInt()).toString()
+                    "*"-> formula.text = (numTemp * formula.text.toString().toInt()).toString()
+                    "/"-> formula.text = (numTemp / formula.text.toString().toInt()).toString()
                 }
             }
             numTemp = formula.text.toString().toInt()
@@ -112,10 +112,10 @@ class MainActivity : AppCompatActivity() {
             if (nowInput == true) {
 //                formula.text = (arithmetic_Operations(formula.text.toString().toInt())).toString()
                 when(preOder) {
-                    "+"-> formula.text = (formula.text.toString().toInt() + numTemp).toString()
-                    "-"-> formula.text = (formula.text.toString().toInt() - numTemp).toString()
-                    "*"-> formula.text = (formula.text.toString().toInt() * numTemp).toString()
-                    "/"-> formula.text = (formula.text.toString().toInt() / numTemp).toString()
+                    "+"-> formula.text = (numTemp + formula.text.toString().toInt()).toString()
+                    "-"-> formula.text = (numTemp - formula.text.toString().toInt()).toString()
+                    "*"-> formula.text = (numTemp * formula.text.toString().toInt()).toString()
+                    "/"-> formula.text = (numTemp / formula.text.toString().toInt()).toString()
                 }
             }
             numTemp = formula.text.toString().toInt()
@@ -127,10 +127,10 @@ class MainActivity : AppCompatActivity() {
             if (nowInput == true) {
 //                formula.text = (arithmetic_Operations(formula.text.toString().toInt())).toString()
                 when(preOder) {
-                    "+"-> formula.text = (formula.text.toString().toInt() + numTemp).toString()
-                    "-"-> formula.text = (formula.text.toString().toInt() - numTemp).toString()
-                    "*"-> formula.text = (formula.text.toString().toInt() * numTemp).toString()
-                    "/"-> formula.text = (formula.text.toString().toInt() / numTemp).toString()
+                    "+"-> formula.text = (numTemp + formula.text.toString().toInt()).toString()
+                    "-"-> formula.text = (numTemp - formula.text.toString().toInt()).toString()
+                    "*"-> formula.text = (numTemp * formula.text.toString().toInt()).toString()
+                    "/"-> formula.text = (numTemp / formula.text.toString().toInt()).toString()
                 }
             }
             numTemp = formula.text.toString().toInt()
@@ -142,10 +142,10 @@ class MainActivity : AppCompatActivity() {
             if (nowInput == true) {
 //                formula.text = (arithmetic_Operations(formula.text.toString().toInt())).toString()
                 when(preOder) {
-                    "+"-> formula.text = (formula.text.toString().toInt() + numTemp).toString()
-                    "-"-> formula.text = (formula.text.toString().toInt() - numTemp).toString()
-                    "*"-> formula.text = (formula.text.toString().toInt() * numTemp).toString()
-                    "/"-> formula.text = (formula.text.toString().toInt() / numTemp).toString()
+                    "+"-> formula.text = (numTemp + formula.text.toString().toInt()).toString()
+                    "-"-> formula.text = (numTemp - formula.text.toString().toInt()).toString()
+                    "*"-> formula.text = (numTemp * formula.text.toString().toInt()).toString()
+                    "/"-> formula.text = (numTemp / formula.text.toString().toInt()).toString()
                 }
             }
             numTemp = formula.text.toString().toInt()
@@ -157,10 +157,10 @@ class MainActivity : AppCompatActivity() {
             if (nowInput == true) {
 //                formula.text = (arithmetic_Operations(formula.text.toString().toInt())).toString()
                 when(preOder) {
-                    "+"-> formula.text = (formula.text.toString().toInt() + numTemp).toString()
-                    "-"-> formula.text = (formula.text.toString().toInt() - numTemp).toString()
-                    "*"-> formula.text = (formula.text.toString().toInt() * numTemp).toString()
-                    "/"-> formula.text = (formula.text.toString().toInt() / numTemp).toString()
+                    "+"-> formula.text = (numTemp + formula.text.toString().toInt()).toString()
+                    "-"-> formula.text = (numTemp - formula.text.toString().toInt()).toString()
+                    "*"-> formula.text = (numTemp * formula.text.toString().toInt()).toString()
+                    "/"-> formula.text = (numTemp / formula.text.toString().toInt()).toString()
                 }
             }
             numTemp = formula.textAlignment.toString().toInt()
