@@ -149,6 +149,24 @@ class MainActivity : AppCompatActivity() {
             preOder = ""
             nowInput = true
         }
+
+        //調味料ボタン
+        //塩
+        button_Flavor1.setOnClickListener{
+            numTemp = nStr.toDouble()
+            preOder = "*"
+            nStr = "0.006" //塩分濃度0.6%（ハードコード）
+            formula.text = arithmetic_Operations()
+            preOder = ""
+        }
+        //醤油
+        button_Flavor2.setOnClickListener{
+            numTemp = nStr.toDouble()
+            preOder = "*"
+            nStr = "0.0375" //塩分濃度3.75%（ハードコード）
+            formula.text = arithmetic_Operations()
+            preOder = ""
+        }
     }
 }
 
