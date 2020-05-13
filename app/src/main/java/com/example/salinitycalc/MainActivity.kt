@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                 nStr = ""
                 nowInput = true
             }
-            nStr = format((nStr + "0").toDouble())
+            nStr = nStr + "0"
             formula.text = nStr
         }
         button1.setOnClickListener{
@@ -75,8 +75,7 @@ class MainActivity : AppCompatActivity() {
                 nStr = ""
                 nowInput = true
             }
-            nStr = format((nStr + "2").toDouble())
-            nStr = ((nStr + "6").toDouble()).toString()
+            nStr = format((nStr + "5").toDouble())
             formula.text = nStr
         }
         button7.setOnClickListener{
@@ -105,12 +104,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         button_Dot.setOnClickListener {
-            // まだ
             if (nowInput == false) {
-                formula.text = ""
+                nStr = "0"
+                formula.text = "0"
                 nowInput = true
             }
-            formula.text = (("${formula.text}.".toString()).toDouble()).toString()
+            //文字列にドットがなければ
+            if (nStr.indexOf(".") == -1 ) {
+                nStr = nStr + "."
+                formula.text = nStr
+            }
         }
 
         //計算ボタン
@@ -149,7 +152,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-
+//四則演算
 fun arithmetic_Operations(): String{
     if (nowInput == true) {
         when(preOder) {
@@ -164,11 +167,14 @@ fun arithmetic_Operations(): String{
     return nStr
 }
 
+//doubleの末尾の０を消してstringで返す
 fun format(d: Double): String {
-    if (d == d.toInt().toDouble()) {
+    val regex = Regex(".0+\$")
+    return regex.replace(d.toString(), "")
+/*    if (d == d.toInt().toDouble()) {
         return String.format("%d", d.toInt())
     }
     else {
         return String.format("%s", d)
-    }
+    }*/
 }
