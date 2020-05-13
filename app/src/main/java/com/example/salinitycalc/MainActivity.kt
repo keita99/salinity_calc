@@ -11,7 +11,7 @@ const val EXTRA_MESSAGE = "com.example.salinitycalc.MESSAGE"
 //var num = 0
 var numTemp: Double = 0.0
 var preOder =""
-//var nStr = ""
+var nStr = ""
 var nowInput = true
 
 class MainActivity : AppCompatActivity() {
@@ -23,76 +23,89 @@ class MainActivity : AppCompatActivity() {
         //数字ボタン
         button0.setOnClickListener{
             if (nowInput == false) {
-                formula.text = ""
+                nStr = ""
                 nowInput = true
             }
-            formula.text = (("${formula.text}0".toString()).toDouble()).toString()
+            nStr = format((nStr + "0").toDouble())
+            formula.text = nStr
         }
         button1.setOnClickListener{
             if (nowInput == false) {
-                formula.text = ""
+                nStr = ""
                 nowInput = true
             }
-            formula.text = (("${formula.text}1".toString()).toDouble()).toString()
+            nStr = format((nStr + "1").toDouble())
+            formula.text = nStr
         }
+
         button2.setOnClickListener{
             if (nowInput == false) {
-                formula.text = ""
+                nStr = ""
                 nowInput = true
             }
-            formula.text = (("${formula.text}2".toString()).toDouble()).toString()
+            nStr = format((nStr + "2").toDouble())
+            formula.text = nStr
         }
-        button3.setOnClickListener{
+        button3.setOnClickListener {
             if (nowInput == false) {
-                formula.text = ""
+                nStr = ""
                 nowInput = true
             }
-            formula.text = (("${formula.text}3".toString()).toDouble()).toString()
+            nStr = format((nStr + "3").toDouble())
+            formula.text = nStr
         }
         button4.setOnClickListener{
             if (nowInput == false) {
-                formula.text = ""
+                nStr = ""
                 nowInput = true
             }
-            formula.text = (("${formula.text}4".toString()).toDouble()).toString()
+            nStr = format((nStr + "4").toDouble())
+            formula.text = nStr
         }
         button5.setOnClickListener{
             if (nowInput == false) {
-                formula.text = ""
+                nStr = ""
                 nowInput = true
             }
-            formula.text = (("${formula.text}5".toString()).toDouble()).toString()
+            nStr = format((nStr + "5").toDouble())
+            formula.text = nStr
         }
         button6.setOnClickListener{
             if (nowInput == false) {
-                formula.text = ""
+                nStr = ""
                 nowInput = true
             }
-            formula.text = (("${formula.text}6".toString()).toDouble()).toString()
+            nStr = format((nStr + "2").toDouble())
+            nStr = ((nStr + "6").toDouble()).toString()
+            formula.text = nStr
         }
         button7.setOnClickListener{
             if (nowInput == false) {
-                formula.text = ""
+                nStr = ""
                 nowInput = true
             }
-            formula.text = (("${formula.text}7".toString()).toDouble()).toString()
+            nStr = format((nStr + "7").toDouble())
+            formula.text = nStr
         }
         button8.setOnClickListener{
             if (nowInput == false) {
-                formula.text = ""
+                nStr = ""
                 nowInput = true
             }
-            formula.text = (("${formula.text}8".toString()).toDouble()).toString()
+            nStr = format((nStr + "8").toDouble())
+            formula.text = nStr
         }
         button9.setOnClickListener{
             if (nowInput == false) {
-                formula.text = ""
+                nStr = ""
                 nowInput = true
             }
-            formula.text = (("${formula.text}9".toString()).toDouble()).toString()
+            nStr = format((nStr + "9").toDouble())
+            formula.text = nStr
         }
 
         button_Dot.setOnClickListener {
+            // まだ
             if (nowInput == false) {
                 formula.text = ""
                 nowInput = true
@@ -102,82 +115,33 @@ class MainActivity : AppCompatActivity() {
 
         //計算ボタン
         button_Add.setOnClickListener{
-            if (nowInput == true) {
-//                formula.text = (arithmetic_Operations(formula.text.toString().toDouble())).toString()
-                when(preOder) {
-                    "+"-> formula.text = (numTemp + formula.text.toString().toDouble()).toString()
-                    "-"-> formula.text = (numTemp - formula.text.toString().toDouble()).toString()
-                    "*"-> formula.text = (numTemp * formula.text.toString().toDouble()).toString()
-                    "/"-> formula.text = (numTemp / formula.text.toString().toDouble()).toString()
-                }
-            }
-            numTemp = formula.text.toString().toDouble()
+            formula.text = arithmetic_Operations()
             preOder = "+"
-            nowInput = false
         }
 
         button_Sum.setOnClickListener{
-            if (nowInput == true) {
-//                formula.text = (arithmetic_Operations(formula.text.toString().toDouble())).toString()
-                when(preOder) {
-                    "+"-> formula.text = (numTemp + formula.text.toString().toDouble()).toString()
-                    "-"-> formula.text = (numTemp - formula.text.toString().toDouble()).toString()
-                    "*"-> formula.text = (numTemp * formula.text.toString().toDouble()).toString()
-                    "/"-> formula.text = (numTemp / formula.text.toString().toDouble()).toString()
-                }
-            }
-            numTemp = formula.text.toString().toDouble()
+            formula.text = arithmetic_Operations()
             preOder = "-"
-            nowInput = false
         }
 
         button_Multi.setOnClickListener{
-            if (nowInput == true) {
-//                formula.text = (arithmetic_Operations(formula.text.toString().toDouble())).toString()
-                when(preOder) {
-                    "+"-> formula.text = (numTemp + formula.text.toString().toDouble()).toString()
-                    "-"-> formula.text = (numTemp - formula.text.toString().toDouble()).toString()
-                    "*"-> formula.text = (numTemp * formula.text.toString().toDouble()).toString()
-                    "/"-> formula.text = (numTemp / formula.text.toString().toDouble()).toString()
-                }
-            }
-            numTemp = formula.text.toString().toDouble()
+            formula.text = arithmetic_Operations()
             preOder = "*"
-            nowInput = false
         }
 
         button_Div.setOnClickListener{
-            if (nowInput == true) {
-//                formula.text = (arithmetic_Operations(formula.text.toString().toDouble())).toString()
-                when(preOder) {
-                    "+"-> formula.text = (numTemp + formula.text.toString().toDouble()).toString()
-                    "-"-> formula.text = (numTemp - formula.text.toString().toDouble()).toString()
-                    "*"-> formula.text = (numTemp * formula.text.toString().toDouble()).toString()
-                    "/"-> formula.text = (numTemp / formula.text.toString().toDouble()).toString()
-                }
-            }
-            numTemp = formula.text.toString().toDouble()
+            formula.text = arithmetic_Operations()
             preOder = "/"
-            nowInput = false
         }
 
         button_Equal.setOnClickListener{
-            if (nowInput == true) {
-//                formula.text = (arithmetic_Operations(formula.text.toString().toDouble())).toString()
-                when(preOder) {
-                    "+"-> formula.text = (numTemp + formula.text.toString().toDouble()).toString()
-                    "-"-> formula.text = (numTemp - formula.text.toString().toDouble()).toString()
-                    "*"-> formula.text = (numTemp * formula.text.toString().toDouble()).toString()
-                    "/"-> formula.text = (numTemp / formula.text.toString().toDouble()).toString()
-                }
-            }
-            numTemp = formula.textAlignment.toString().toDouble()
+            formula.text = arithmetic_Operations()
             preOder = ""
-            nowInput = false
         }
 
         button_AC.setOnClickListener{
-            formula.text = "0.0"
+            formula.text = "0"
+            nStr = "0"
             numTemp = 0.0
             preOder = ""
             nowInput = true
@@ -186,13 +150,25 @@ class MainActivity : AppCompatActivity() {
 }
 
 
-fun arithmetic_Operations(num: Double):Double {
-    var ret = 0.0
-    when (preOder) {
-        "+" -> ret = num + numTemp
-        "-" -> ret =  num - numTemp
-        "*" -> ret =  num * numTemp
-        "/" -> ret = num / numTemp
+fun arithmetic_Operations(): String{
+    if (nowInput == true) {
+        when(preOder) {
+            "+"-> nStr = format(numTemp + nStr.toDouble())
+            "-"-> nStr = format(numTemp - nStr.toDouble())
+            "*"-> nStr = format(numTemp * nStr.toDouble())
+            "/"-> nStr = format(numTemp / nStr.toDouble())
+        }
     }
-    return ret
+    numTemp = nStr.toDouble()
+    nowInput = false
+    return nStr
+}
+
+fun format(d: Double): String {
+    if (d == d.toInt().toDouble()) {
+        return String.format("%d", d.toInt())
+    }
+    else {
+        return String.format("%s", d)
+    }
 }
