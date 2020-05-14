@@ -149,6 +149,10 @@ class MainActivity : AppCompatActivity() {
             preOder = ""
             nowInput = true
         }
+        button_C.setOnClickListener{
+            formula.text = "0"
+            nStr = "0"
+        }
 
         //調味料ボタン
         //塩

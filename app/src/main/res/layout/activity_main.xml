@@ -4,13 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#2196F3"
     tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button_C"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="288dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="C"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_Div"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_Flavor2"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#2196F3"
         android:text="@string/flavor2"
         android:textSize="24sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/button_Flavor1"
@@ -21,11 +35,11 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="288dp"
+        android:layout_marginStart="24dp"
         android:fontFamily="sans-serif-medium"
         android:text="AC"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_Div"
+        app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -226,22 +240,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="68dp"
+        android:backgroundTint="#2196F3"
         android:text="@string/flavor1"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/button_AC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/formula" />
 
     <TextView
         android:id="@+id/formula"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:text="@string/formula_text"
         android:textAlignment="viewEnd"
         android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/button9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
