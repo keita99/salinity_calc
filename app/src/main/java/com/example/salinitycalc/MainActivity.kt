@@ -157,19 +157,25 @@ class MainActivity : AppCompatActivity() {
         //調味料ボタン
         //塩
         button_Flavor1.setOnClickListener{
-            numTemp = nStr.toDouble()
-            preOder = "*"
-            nStr = "0.006" //塩分濃度0.6%（ハードコード）
-            formula.text = arithmetic_Operations()
-            preOder = ""
+            if (preOder != "flav") {
+                formula.text = arithmetic_Operations()
+                numTemp = 0.006
+                preOder = "*"
+                nowInput = true
+                formula.text = arithmetic_Operations()
+                preOder = "flav"
+            }
         }
         //醤油
         button_Flavor2.setOnClickListener{
-            numTemp = nStr.toDouble()
-            preOder = "*"
-            nStr = "0.0375" //塩分濃度3.75%（ハードコード）
-            formula.text = arithmetic_Operations()
-            preOder = ""
+            if (preOder != "flav") {
+                formula.text = arithmetic_Operations()
+                numTemp = 0.0375
+                preOder = "*"
+                nowInput = true
+                formula.text = arithmetic_Operations()
+                preOder = "flav"
+            }
         }
     }
 }
@@ -183,9 +189,9 @@ fun arithmetic_Operations(): String{
             "*"-> nStr = format(numTemp * nStr.toDouble())
             "/"-> nStr = format(numTemp / nStr.toDouble())
         }
+        numTemp = nStr.toDouble()
+        nowInput = false
     }
-    numTemp = nStr.toDouble()
-    nowInput = false
     return nStr
 }
 
