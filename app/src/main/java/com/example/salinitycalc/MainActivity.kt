@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         //数字ボタン
         button0.setOnClickListener{
             if (nowInput == "ope" || nowInput == "fla") { nStr = "" }
+            if (nStr == "0") return@setOnClickListener
             nStr = nStr + "0"
             formula.text = nStr
             nowInput = "num"
@@ -121,12 +122,6 @@ class MainActivity : AppCompatActivity() {
             nowInput = "ope"
         }
 
-/*        button_Percent.setOnClickListener{
-            if (nowInput != "ope" && nowInput!="fla") { formula.text = arithmetic_Operations()}
-            preOder = "%"
-            nowInput = "ope"
-        }
-*/
         button_Equal.setOnClickListener{
             if (nowInput != "ope" && nowInput!="fla") { formula.text = arithmetic_Operations()}
             preOder = ""
@@ -150,20 +145,56 @@ class MainActivity : AppCompatActivity() {
         button_Flavor1.setOnClickListener{
             if (nowInput == "fla") return@setOnClickListener
             formula.text = arithmetic_Operations()
-            numTemp = nStr.toDouble()
-            nStr = "0.006"
+            nStr = resources.getString(R.string.flavor1_salinity)
             preOder = "*"
             formula.text = arithmetic_Operations()
+            preOder = ""
             nowInput = "fla"
         }
         //醤油
         button_Flavor2.setOnClickListener{
             if (nowInput== "fla") return@setOnClickListener
             formula.text = arithmetic_Operations()
-            numTemp = nStr.toDouble()
-            nStr = "0.0375"
+            nStr = resources.getString(R.string.flavor2_salinity)
             preOder = "*"
             formula.text = arithmetic_Operations()
+            preOder = ""
+            nowInput = "fla"
+        }
+        button_Flavor3.setOnClickListener{
+            if (nowInput== "fla") return@setOnClickListener
+            formula.text = arithmetic_Operations()
+            nStr = resources.getString(R.string.flavor3_salinity)
+            preOder = "*"
+            formula.text = arithmetic_Operations()
+            preOder = ""
+            nowInput = "fla"
+        }
+        button_Flavor4.setOnClickListener{
+            if (nowInput== "fla") return@setOnClickListener
+            formula.text = arithmetic_Operations()
+            nStr = resources.getString(R.string.flavor4_salinity)
+            preOder = "*"
+            formula.text = arithmetic_Operations()
+            preOder = ""
+            nowInput = "fla"
+        }
+        button_Flavor5.setOnClickListener{
+            if (nowInput== "fla") return@setOnClickListener
+            formula.text = arithmetic_Operations()
+            nStr = resources.getString(R.string.flavor5_salinity)
+            preOder = "*"
+            formula.text = arithmetic_Operations()
+            preOder = ""
+            nowInput = "fla"
+        }
+        button_Flavor6.setOnClickListener{
+            if (nowInput== "fla") return@setOnClickListener
+            formula.text = arithmetic_Operations()
+            nStr = resources.getString(R.string.flavor6_salinity)
+            preOder = "*"
+            formula.text = arithmetic_Operations()
+            preOder = ""
             nowInput = "fla"
         }
     }
@@ -176,7 +207,6 @@ fun arithmetic_Operations(): String{
         "-"-> nStr = format(numTemp - nStr.toDouble())
         "*"-> nStr = format(numTemp * nStr.toDouble())
         "/"-> nStr = format(numTemp / nStr.toDouble())
-//        "%"-> nStr = format(numTemp % nStr.toDouble())
     }
     numTemp = nStr.toDouble()
     return nStr

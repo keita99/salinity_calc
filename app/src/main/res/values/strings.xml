@@ -2,5 +2,15 @@
     <string name="app_name">salinitycalc</string>
     <string name="flavor1">塩</string>
     <string name="flavor2">しょうゆ</string>
+    <string name="flavor3">コンソメ</string>
+    <string name="flavor4">味噌</string>
+    <string name="flavor5">ケチャップ</string>
+    <string name="flavor6">ソース</string>
     <string name="formula_text">0</string>
+    <string name="flavor1_salinity">0.006</string>
+    <string name="flavor2_salinity">0.0375</string>
+    <string name="flavor3_salinity">0.012</string>
+    <string name="flavor4_salinity">0.05</string>
+    <string name="flavor5_salinity">0.033</string>
+    <string name="flavor6_salinity">0.15</string>
 </resources>
