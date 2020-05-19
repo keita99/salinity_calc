@@ -14,7 +14,6 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
         android:background="#E0F2F1"
         android:text="@string/formula_text"
         android:textAlignment="viewEnd"
@@ -34,6 +33,37 @@
         app:layout_constraintBottom_toTopOf="@+id/calc_Button_tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dip">
+
+            <Button
+                android:id="@+id/button_Tere1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/tereButtonColor"
+                android:text="@string/tere1" />
+
+            <Button
+                android:id="@+id/button_Tere2"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/tereButtonColor"
+                android:text="@string/tere2" />
+
+            <Button
+                android:id="@+id/button_Tere3"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/tereButtonColor"
+                android:text="@string/tere3" />
+
+        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"

@@ -22,63 +22,63 @@ class MainActivity : AppCompatActivity() {
 
         //数字ボタン
         button0.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla") { nStr = "" }
+            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
             if (nStr == "0") return@setOnClickListener
             nStr = nStr + "0"
             formula.text = nStr
             nowInput = "num"
         }
         button1.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla") { nStr = "" }
+            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
             nStr = format((nStr + "1").toDouble())
             formula.text = nStr
             nowInput = "num"
         }
 
         button2.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla") { nStr = "" }
+            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
             nStr = format((nStr + "2").toDouble())
             formula.text = nStr
             nowInput = "num"
         }
         button3.setOnClickListener {
-            if (nowInput == "ope" || nowInput == "fla") { nStr = "" }
+            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
             nStr = format((nStr + "3").toDouble())
             formula.text = nStr
             nowInput = "num"
         }
         button4.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla") { nStr = "" }
+            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
             nStr = format((nStr + "4").toDouble())
             formula.text = nStr
             nowInput = "num"
         }
         button5.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla") { nStr = "" }
+            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
             nStr = format((nStr + "5").toDouble())
             formula.text = nStr
             nowInput = "num"
         }
         button6.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla") { nStr = "" }
+            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
             nStr = format((nStr + "6").toDouble())
             formula.text = nStr
             nowInput = "num"
         }
         button7.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla") { nStr = "" }
+            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
             nStr = format((nStr + "7").toDouble())
             formula.text = nStr
             nowInput = "num"
         }
         button8.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla") { nStr = "" }
+            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
             nStr = format((nStr + "8").toDouble())
             formula.text = nStr
             nowInput = "num"
         }
         button9.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla") { nStr = "" }
+            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
             nStr = format((nStr + "9").toDouble())
             formula.text = nStr
             nowInput = "num"
@@ -99,31 +99,31 @@ class MainActivity : AppCompatActivity() {
 
         //計算ボタン
         button_Add.setOnClickListener{
-            if (nowInput != "ope" && nowInput!="fla") { formula.text = arithmetic_Operations()}
+            if (nowInput != "ope" && nowInput!="fla" && nowInput!="tere") { formula.text = arithmetic_Operations()}
             preOder = "+"
             nowInput = "ope"
         }
 
         button_Sum.setOnClickListener{
-            if (nowInput != "ope" && nowInput!="fla") { formula.text = arithmetic_Operations()}
+            if (nowInput != "ope" && nowInput!="fla" && nowInput!="tere") { formula.text = arithmetic_Operations()}
             preOder = "-"
             nowInput = "ope"
         }
 
         button_Multi.setOnClickListener{
-            if (nowInput != "ope" && nowInput!="fla") { formula.text = arithmetic_Operations()}
+            if (nowInput != "ope" && nowInput!="fla" && nowInput!="tere") { formula.text = arithmetic_Operations()}
             preOder = "*"
             nowInput = "ope"
         }
 
         button_Div.setOnClickListener{
-            if (nowInput != "ope" && nowInput!="fla") { formula.text = arithmetic_Operations()}
+            if (nowInput != "ope" && nowInput!="fla" && nowInput!="tere") { formula.text = arithmetic_Operations()}
             preOder = "/"
             nowInput = "ope"
         }
 
         button_Equal.setOnClickListener{
-            if (nowInput != "ope" && nowInput!="fla") { formula.text = arithmetic_Operations()}
+            if (nowInput != "ope" && nowInput!="fla" && nowInput!="tere") { formula.text = arithmetic_Operations()}
             preOder = ""
             nowInput = "ope"
         }
@@ -196,6 +196,32 @@ class MainActivity : AppCompatActivity() {
             formula.text = arithmetic_Operations()
             preOder = ""
             nowInput = "fla"
+        }
+
+        //風袋計算
+        button_Tere1.setOnClickListener{
+            formula.text = arithmetic_Operations()
+            nStr = resources.getString(R.string.tere1_weight)
+            preOder = "-"
+            formula.text = arithmetic_Operations()
+            preOder = ""
+            nowInput = "tere"
+        }
+        button_Tere2.setOnClickListener{
+            formula.text = arithmetic_Operations()
+            nStr = resources.getString(R.string.tere2_weight)
+            preOder = "-"
+            formula.text = arithmetic_Operations()
+            preOder = ""
+            nowInput = "tere"
+        }
+        button_Tere3.setOnClickListener{
+            formula.text = arithmetic_Operations()
+            nStr = resources.getString(R.string.tere3_weight)
+            preOder = "-"
+            formula.text = arithmetic_Operations()
+            preOder = ""
+            nowInput = "tere"
         }
     }
 }
