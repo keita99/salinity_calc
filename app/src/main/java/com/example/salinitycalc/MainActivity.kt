@@ -3,12 +3,11 @@ package com.example.salinitycalc
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.Preference
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_settings.*
+import kotlinx.android.synthetic.main.settings_activity.*
 
 const val EXTRA_MESSAGE = "com.example.salinitycalc.MESSAGE"
 //var num = 0
@@ -27,7 +26,11 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_settings -> {
                 // User chose the "Settings" item, show the app settings UI...
-                val intent = Intent(this,settings::class.java)
+/*                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.settings_container, SettingsActivity.SettingsFragment())
+                    .commit()*/
+                val intent = Intent(this,SettingsActivity::class.java)
                 startActivity(intent)
                 true
             }

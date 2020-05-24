@@ -1,0 +1,97 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/flavoring_header1">
+        <EditTextPreference
+            app:defaultValue="@string/flavor1"
+            app:key="flavor1"
+            app:title="名前"
+            app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            android:defaultValue="@string/flavor1_salinity"
+            app:key="flavor1_salinity"
+            app:title="塩分濃度 %"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/flavoring_header2">
+        <EditTextPreference
+            app:defaultValue="@string/flavor2"
+            app:key="flavor2"
+            app:title="名前"
+            app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            android:defaultValue="@string/flavor2_salinity"
+            app:key="flavor2_salinity"
+            app:title="塩分濃度 %"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/flavoring_header3">
+        <EditTextPreference
+            app:defaultValue="@string/flavor3"
+            app:key="flavor3"
+            app:title="名前"
+            app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            android:defaultValue="@string/flavor3_salinity"
+            app:key="flavor3_salinity"
+            app:title="塩分濃度 %"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/flavoring_header4">
+        <EditTextPreference
+            app:defaultValue="@string/flavor4"
+            app:key="flavor4"
+            app:title="名前"
+            app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            android:defaultValue="@string/flavor4_salinity"
+            app:key="flavor4_salinity"
+            app:title="塩分濃度 %"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/flavoring_header5">
+        <EditTextPreference
+            app:defaultValue="@string/flavor5"
+            app:key="flavor5"
+            app:title="名前"
+            app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            android:defaultValue="@string/flavor5_salinity"
+            app:key="flavor5_salinity"
+            app:title="塩分濃度 %"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/flavoring_header6">
+        <EditTextPreference
+            app:defaultValue="@string/flavor6"
+            app:key="flavor6"
+            app:title="名前"
+            app:useSimpleSummaryProvider="true" />
+        <EditTextPreference
+            android:defaultValue="@string/flavor6_salinity"
+            app:key="flavor6_salinity"
+            app:title="塩分濃度 %"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="@string/sync_title" />
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
