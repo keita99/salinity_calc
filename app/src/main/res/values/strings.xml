@@ -19,4 +19,7 @@
     <string name="tere1_weight">665</string>
     <string name="tere2_weight">200</string>
     <string name="tere3_weight">300</string>
+
+    <string name="action_settings">setting</string>
+    <string name="title_activity_settings">setting</string>
 </resources>
