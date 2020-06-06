@@ -1,6 +1,7 @@
 package com.example.salinitycalc
 
 import android.content.Intent
+import android.icu.math.BigDecimal
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.preference.Preference
@@ -11,10 +12,10 @@ import kotlinx.android.synthetic.main.settings_activity.*
 
 const val EXTRA_MESSAGE = "com.example.salinitycalc.MESSAGE"
 //var num = 0
-var numTemp = "0"
+var numTemp = BigDecimal.ZERO
 var preOder =""
-var nStr = ""
-var nowInput = "" // "num", "ope", "fla"
+var nStr = BigDecimal.ZERO
+var nowInput = "" // "num", "ope", "fla", "dot"
 
 class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -49,78 +50,47 @@ class MainActivity : AppCompatActivity() {
 
         //数字ボタン
         button0.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
-            if (nStr == "0") return@setOnClickListener
-            nStr = nStr + "0"
-            formula.text = nStr
-            nowInput = "num"
+            formula.text = num_Plus("0")
         }
         button1.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
-            nStr = format((nStr + "1").toDouble())
-            formula.text = nStr
-            nowInput = "num"
+            formula.text = num_Plus("1")
         }
 
         button2.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
-            nStr = format((nStr + "2").toDouble())
-            formula.text = nStr
-            nowInput = "num"
+            formula.text = num_Plus("2")
         }
         button3.setOnClickListener {
-            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
-            nStr = format((nStr + "3").toDouble())
-            formula.text = nStr
-            nowInput = "num"
+            formula.text = num_Plus("3")
         }
         button4.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
-            nStr = format((nStr + "4").toDouble())
-            formula.text = nStr
-            nowInput = "num"
+            formula.text = num_Plus("4")
         }
         button5.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
-            nStr = format((nStr + "5").toDouble())
-            formula.text = nStr
-            nowInput = "num"
+            formula.text = num_Plus("5")
         }
         button6.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
-            nStr = format((nStr + "6").toDouble())
-            formula.text = nStr
-            nowInput = "num"
+            formula.text = num_Plus("6")
         }
         button7.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
-            nStr = format((nStr + "7").toDouble())
-            formula.text = nStr
-            nowInput = "num"
+            formula.text = num_Plus("7")
         }
         button8.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
-            nStr = format((nStr + "8").toDouble())
-            formula.text = nStr
-            nowInput = "num"
+            formula.text = num_Plus("8")
         }
         button9.setOnClickListener{
-            if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = "" }
-            nStr = format((nStr + "9").toDouble())
-            formula.text = nStr
-            nowInput = "num"
+            formula.text = num_Plus("9")
         }
 
         button_Dot.setOnClickListener {
             if (nowInput == "ope") {
-                nStr = "0"
+                nStr = BigDecimal.ZERO
                 formula.text = "0"
                 nowInput = "num"
             }
             //文字列にドットがなければ
-            if (nStr.indexOf(".") == -1 ) {
-                nStr = nStr + "."
-                formula.text = nStr
+            if (nStr.toString().indexOf(".") == -1 ) {
+                formula.text = nStr.toString() + "."
+                nowInput = "dot"
             }
         }
 
@@ -157,16 +127,16 @@ class MainActivity : AppCompatActivity() {
 
         button_AC.setOnClickListener{
             formula.text = "0"
-            nStr = "0"
-            numTemp = "0"
+            nStr = BigDecimal.ZERO
+            numTemp = BigDecimal.ZERO
             preOder = ""
             nowInput = ""
         }
         button_C.setOnClickListener{
             formula.text = "0"
-            nStr = "0"
+            nStr = BigDecimal.ZERO
         }
-
+/*
         //調味料ボタン
         //塩
         button_Flavor1.setOnClickListener{
@@ -250,23 +220,40 @@ class MainActivity : AppCompatActivity() {
             preOder = ""
             nowInput = "tere"
         }
+
+ */
     }
 }
 
 //四則演算
 fun arithmetic_Operations(): String{
     when(preOder) {
-        "+"-> nStr = format(numTemp.toDouble() + nStr.toDouble())
-        "-"-> nStr = format(numTemp.toDouble() - nStr.toDouble())
-        "*"-> nStr = format(numTemp.toDouble() * nStr.toDouble())
-        "/"-> nStr = format(numTemp.toDouble() / nStr.toDouble())
+        "+"-> nStr = numTemp.add(nStr)
+        "-"-> nStr = numTemp.min(nStr)
+        "*"-> nStr = numTemp.multiply(nStr)
+        "/"-> nStr = numTemp.divide(nStr, 3, BigDecimal.ROUND_HALF_UP)
     }
     numTemp = nStr
-    return nStr
+    return format(nStr.toString())
 }
 
-//doubleの末尾の０を消してstringで返す
-fun format(d: Double): String {
+//数値列の末尾に数値を追加
+fun num_Plus(s: String): String{
+    if (nowInput == "ope" || nowInput == "fla" || nowInput == "tere") { nStr = BigDecimal.ZERO }
+    if (nStr.equals(0)) return "0"
+    if (nowInput != "dot") {
+        nStr = BigDecimal(nStr.toString() + s)
+    }
+    else {
+        nStr = BigDecimal(nStr.toString() + "." + s)
+    }
+
+    nowInput = "num"
+    return nStr.toString()
+}
+
+//stringの末尾の０を消してstringで返す
+fun format(s: String): String {
     val regex = Regex(".0+\$")
-    return regex.replace(d.toString(), "")
+    return regex.replace(s, "")
 }
