@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.settings_activity.*
 
 const val EXTRA_MESSAGE = "com.example.salinitycalc.MESSAGE"
 //var num = 0
-var numTemp: Double = 0.0
+var numTemp = "0"
 var preOder =""
 var nStr = ""
 var nowInput = "" // "num", "ope", "fla"
@@ -158,7 +158,7 @@ class MainActivity : AppCompatActivity() {
         button_AC.setOnClickListener{
             formula.text = "0"
             nStr = "0"
-            numTemp = 0.0
+            numTemp = "0"
             preOder = ""
             nowInput = ""
         }
@@ -256,12 +256,12 @@ class MainActivity : AppCompatActivity() {
 //四則演算
 fun arithmetic_Operations(): String{
     when(preOder) {
-        "+"-> nStr = format(numTemp + nStr.toDouble())
-        "-"-> nStr = format(numTemp - nStr.toDouble())
-        "*"-> nStr = format(numTemp * nStr.toDouble())
-        "/"-> nStr = format(numTemp / nStr.toDouble())
+        "+"-> nStr = format(numTemp.toDouble() + nStr.toDouble())
+        "-"-> nStr = format(numTemp.toDouble() - nStr.toDouble())
+        "*"-> nStr = format(numTemp.toDouble() * nStr.toDouble())
+        "/"-> nStr = format(numTemp.toDouble() / nStr.toDouble())
     }
-    numTemp = nStr.toDouble()
+    numTemp = nStr
     return nStr
 }
 
