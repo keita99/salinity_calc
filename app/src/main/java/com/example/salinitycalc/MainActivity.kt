@@ -136,23 +136,24 @@ class MainActivity : AppCompatActivity() {
             formula.text = "0"
             nStr = BigDecimal.ZERO
         }
-/*
+
         //調味料ボタン
         //塩
         button_Flavor1.setOnClickListener{
             if (nowInput == "fla") return@setOnClickListener
             formula.text = arithmetic_Operations()
-            nStr = resources.getString(R.string.flavor1_salinity)
+            nStr = BigDecimal(resources.getString(R.string.flavor1_salinity))
             preOder = "*"
             formula.text = arithmetic_Operations()
             preOder = ""
             nowInput = "fla"
         }
+
         //醤油
         button_Flavor2.setOnClickListener{
             if (nowInput== "fla") return@setOnClickListener
             formula.text = arithmetic_Operations()
-            nStr = resources.getString(R.string.flavor2_salinity)
+            nStr = BigDecimal(resources.getString(R.string.flavor2_salinity))
             preOder = "*"
             formula.text = arithmetic_Operations()
             preOder = ""
@@ -161,7 +162,7 @@ class MainActivity : AppCompatActivity() {
         button_Flavor3.setOnClickListener{
             if (nowInput== "fla") return@setOnClickListener
             formula.text = arithmetic_Operations()
-            nStr = resources.getString(R.string.flavor3_salinity)
+            nStr = BigDecimal(resources.getString(R.string.flavor3_salinity))
             preOder = "*"
             formula.text = arithmetic_Operations()
             preOder = ""
@@ -170,7 +171,7 @@ class MainActivity : AppCompatActivity() {
         button_Flavor4.setOnClickListener{
             if (nowInput== "fla") return@setOnClickListener
             formula.text = arithmetic_Operations()
-            nStr = resources.getString(R.string.flavor4_salinity)
+            nStr = BigDecimal(resources.getString(R.string.flavor4_salinity))
             preOder = "*"
             formula.text = arithmetic_Operations()
             preOder = ""
@@ -179,7 +180,7 @@ class MainActivity : AppCompatActivity() {
         button_Flavor5.setOnClickListener{
             if (nowInput== "fla") return@setOnClickListener
             formula.text = arithmetic_Operations()
-            nStr = resources.getString(R.string.flavor5_salinity)
+            nStr = BigDecimal(resources.getString(R.string.flavor5_salinity))
             preOder = "*"
             formula.text = arithmetic_Operations()
             preOder = ""
@@ -188,7 +189,7 @@ class MainActivity : AppCompatActivity() {
         button_Flavor6.setOnClickListener{
             if (nowInput== "fla") return@setOnClickListener
             formula.text = arithmetic_Operations()
-            nStr = resources.getString(R.string.flavor6_salinity)
+            nStr = BigDecimal(resources.getString(R.string.flavor6_salinity))
             preOder = "*"
             formula.text = arithmetic_Operations()
             preOder = ""
@@ -198,7 +199,7 @@ class MainActivity : AppCompatActivity() {
         //風袋計算
         button_Tere1.setOnClickListener{
             formula.text = arithmetic_Operations()
-            nStr = resources.getString(R.string.tere1_weight)
+            nStr = BigDecimal(resources.getString(R.string.tere1_weight))
             preOder = "-"
             formula.text = arithmetic_Operations()
             preOder = ""
@@ -206,7 +207,7 @@ class MainActivity : AppCompatActivity() {
         }
         button_Tere2.setOnClickListener{
             formula.text = arithmetic_Operations()
-            nStr = resources.getString(R.string.tere2_weight)
+            nStr = BigDecimal(resources.getString(R.string.tere2_weight))
             preOder = "-"
             formula.text = arithmetic_Operations()
             preOder = ""
@@ -214,14 +215,13 @@ class MainActivity : AppCompatActivity() {
         }
         button_Tere3.setOnClickListener{
             formula.text = arithmetic_Operations()
-            nStr = resources.getString(R.string.tere3_weight)
+            nStr = BigDecimal(resources.getString(R.string.tere3_weight))
             preOder = "-"
             formula.text = arithmetic_Operations()
             preOder = ""
             nowInput = "tere"
         }
-
- */
+        
     }
 }
 
